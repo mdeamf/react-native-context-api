@@ -9,17 +9,26 @@
  */
 
 import React from 'react';
-import {SafeAreaView, ScrollView, StatusBar, Text} from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
 
 const App = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <StatusBar />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Text>Testing!</Text>
-      </ScrollView>
+      <View>
+        <Text>Teste!</Text>
+      </View>
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 16,
+  },
+});
 
 export default App;
