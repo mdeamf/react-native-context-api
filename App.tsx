@@ -10,15 +10,26 @@
 
 import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {StoreProvider, useStore} from './src/store/Store';
+
+const Content = () => {
+  const {myColor} = useStore();
+
+  return (
+    <View>
+      <Text style={{color: myColor}}>Teste!</Text>
+    </View>
+  );
+};
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar />
-      <View>
-        <Text>Teste!</Text>
-      </View>
-    </SafeAreaView>
+    <StoreProvider>
+      <SafeAreaView style={styles.container}>
+        <StatusBar />
+        <Content />
+      </SafeAreaView>
+    </StoreProvider>
   );
 };
 
